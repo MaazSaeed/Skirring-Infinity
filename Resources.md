@@ -22,3 +22,7 @@
 - Red Blob Games - for discussion on various topics related to algorithms, game dev, and more... [link](https://www.redblobgames.com/)
 - Computational Geometry [link](https://www.cs.cmu.edu/afs/cs/academic/class/15456-s13/resources.html)
 - Shaders, useful for creating splendid effects and more... [link](https://thebookofshaders.com/)
+- Procedural Planets Generation [link](https://www.youtube.com/watch?v=feNVBEPXAcE)
+- Procedurally Generated Trees [link](https://www.instructables.com/Procedurally-Generated-Trees/)
+- L System [link](https://en.wikipedia.org/wiki/L-system)
+- Procedural Creature Generation & Animation [link](https://nccastaff.bournemouth.ac.uk/jmacey/MastersProject/MSc22/01/ProceduralCreatureGenerationandAnimationforGames.pdf)
