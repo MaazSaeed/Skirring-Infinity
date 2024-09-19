@@ -1,5 +1,5 @@
 ## Procedural generation
-[link](https://nomanssky-archive.fandom.com/wiki/Procedural_generation#:~:text=Whilst%20procedural%20generation%20will%20start,close%20enough%20to%20each%20other)
+No Man's Sky wiki [link](https://nomanssky-archive.fandom.com/wiki/Procedural_generation#:~:text=Whilst%20procedural%20generation%20will%20start,close%20enough%20to%20each%20other)
 
 How I Learned Procedural Generation (video - in Unity)
 - discusses the learning process and multiple sources he used for procedural generation of land (good place to start)
