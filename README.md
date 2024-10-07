@@ -15,6 +15,6 @@ We will be building this game as our senior design year project, a space explora
 ## Technologies Used
 
 - **Game Engine**: Unity
-- **Programming Language**: C# 
+- **Programming Language**: C#
 - **Graphics**: ShaderLab/HLSL
 - **Procedural Generation**: Implemented to create diverse and engaging environments.
