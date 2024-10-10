@@ -20,8 +20,6 @@ public class TerrainFace : MonoBehaviour
 
         axisA = new Vector3(localUp.y, localUp.z, localUp.x);
         axisB = Vector3.Cross(localUp, axisA); // Vector perpendicular to localup and axisA - cross product
-
-
     }
 
     public void ConstructMesh()
@@ -41,18 +39,28 @@ public class TerrainFace : MonoBehaviour
 
         int i = 0;
         int triIndex = 0;
-        for (int x = 0; x < resolution; x++)
+        for (int y = 0; y < resolution; y++)
         {
-            for (int y = 0; y < resolution; y++)
+            for (int x = 0; x < resolution; x++)
             {
                 Vector2 percent = new Vector2(x, y) / (resolution - 1); // telling us how close to complete each loop is (normalized coordinates)
                 // we can use this to define where the vertex will be on the face
                 Vector3 pointOnUnitCube = localUp + (percent.x - 0.5f) * 2 * axisA + (percent.y - 0.5f) * 2 * axisB;
                 // The unit cube has sides of length 1, centered at the origin.
                 // localUp  - face we're operating on
-                i++;
 
-                vertices[i] = pointOnUnitCube;
+                Vector3 pointOnUnitSphere = pointOnUnitCube.normalized;
+                /*  How normalization works:
+                    Normalization means converting a vector to a unit vector, which has a length (or magnitude) of 1, 
+                    while maintaining the same direction.
+                    By calling pointOnUnitCube.normalized, you are taking the pointOnUnitCube vector 
+                    (which could be any point on the cube's surface) and normalizing it, 
+                    which effectively projects it onto the surface of a unit sphere.
+                    This works because the center of both the cube and the sphere is the origin (0, 0, 0). 
+                    The further a point is from the origin, the more the normalization "pulls" that point onto the unit sphere.
+                */
+
+                vertices[i] = pointOnUnitSphere;
 
                 if (x != resolution - 1 && y != resolution - 1) // do this for triangles of all edges except for the right most and bottom edges
                 {
@@ -68,6 +76,7 @@ public class TerrainFace : MonoBehaviour
 
                     triIndex += 6; // because we added 6 vertices in our array
                 }
+                i++;
             }
         }
         mesh.Clear();
