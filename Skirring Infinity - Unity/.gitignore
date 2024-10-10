@@ -1,0 +1,25 @@
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore Unity generated files
+Temp/
+Obj/
+Build/
+Library/
+Logs/
+MemoryCaptures/
+*.csproj
+*.unityproj
+*.pidb
+*.suo
+*.user
+*.userprefs
+*.pidb.meta
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.swp
