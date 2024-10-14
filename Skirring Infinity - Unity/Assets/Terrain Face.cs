@@ -5,6 +5,7 @@ using UnityEngine;
 // creating a sphere using a cube and inflating it, covering it up with meshes for control over finer details
 public class TerrainFace : MonoBehaviour
 {
+    ShapeGenerator shapeGenerator;
     Mesh mesh;
     int resolution;
     Vector3 localUp;
@@ -12,8 +13,9 @@ public class TerrainFace : MonoBehaviour
     Vector3 axisB;
 
 
-    public TerrainFace(Mesh mesh, int resolution, Vector3 localUp)
+    public TerrainFace(ShapeGenerator shapeGenerator, Mesh mesh, int resolution, Vector3 localUp)
     {
+        this.shapeGenerator = shapeGenerator;
         this.mesh = mesh;
         this.resolution = resolution;
         this.localUp = localUp; //directional vector going up from top face of the cube
@@ -60,16 +62,16 @@ public class TerrainFace : MonoBehaviour
                     The further a point is from the origin, the more the normalization "pulls" that point onto the unit sphere.
                 */
 
-                vertices[i] = pointOnUnitSphere;
+                vertices[i] = shapeGenerator.CalculatePointOnPlanet(pointOnUnitSphere); // current point
 
                 if (x != resolution - 1 && y != resolution - 1) // do this for triangles of all edges except for the right most and bottom edges
                 {
-                    // first triangle
+                    // form first triangle
                     triangles[triIndex] = i;
                     triangles[triIndex + 1] = i + resolution + 1;
                     triangles[triIndex + 2] = i + resolution;
 
-                    //  second triangle
+                    // form second triangle
                     triangles[triIndex + 3] = i;
                     triangles[triIndex + 4] = i + 1;
                     triangles[triIndex + 5] = i + resolution + 1;
