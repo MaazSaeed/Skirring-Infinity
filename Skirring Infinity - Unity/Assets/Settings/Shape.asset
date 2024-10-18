@@ -15,22 +15,65 @@ MonoBehaviour:
   planetRadius: 3.33
   noiseLayers:
   - enabled: 1
-    useFirstLayerAsMask: 0
+    useFirstLayerAsMask: 1
     noiseSettings:
-      strength: 0.2
-      numLayers: 4
-      baseRoughness: 1
-      roughness: 2.34
-      persistence: 0.37
-      centre: {x: 0, y: 0, z: 0}
-      minValue: 0.76
+      filterType: 0
+      simpleNoiseSettings:
+        strength: 0.2
+        numLayers: 2
+        baseRoughness: 1.14
+        roughness: 6.51
+        persistence: 0.09
+        centre: {x: 0, y: 0, z: 0}
+        minValue: 0.63
+      ridgidNoiseSettings:
+        strength: 1
+        numLayers: 1
+        baseRoughness: 1
+        roughness: 2
+        persistence: 0.5
+        centre: {x: 0, y: 0, z: 0}
+        minValue: 0
+        weightMultiplier: 0.8
   - enabled: 1
     useFirstLayerAsMask: 1
     noiseSettings:
-      strength: 4.97
-      numLayers: 5
-      baseRoughness: 3.57
-      roughness: 8.32
-      persistence: 0.54
-      centre: {x: 0.37, y: 1.41, z: 0}
-      minValue: 1.33
+      filterType: 0
+      simpleNoiseSettings:
+        strength: 0.22
+        numLayers: 3
+        baseRoughness: 2.54
+        roughness: 5.7
+        persistence: 0.65
+        centre: {x: 0, y: 0, z: 0}
+        minValue: -0.78
+      ridgidNoiseSettings:
+        strength: 1.36
+        numLayers: 2
+        baseRoughness: 1
+        roughness: 2
+        persistence: 0.5
+        centre: {x: 0, y: 0, z: 0}
+        minValue: 0.2
+        weightMultiplier: 0.8
+  - enabled: 1
+    useFirstLayerAsMask: 1
+    noiseSettings:
+      filterType: 1
+      simpleNoiseSettings:
+        strength: 1
+        numLayers: 1
+        baseRoughness: 1
+        roughness: 2
+        persistence: 0.5
+        centre: {x: 0, y: 0, z: 0}
+        minValue: 0
+      ridgidNoiseSettings:
+        strength: 1.4
+        numLayers: 2
+        baseRoughness: 2.16
+        roughness: 9.1
+        persistence: 0.93
+        centre: {x: 0, y: 0, z: 0}
+        minValue: 0.93
+        weightMultiplier: 0.8
